@@ -1,0 +1,156 @@
+// Этот блок ответственен ТОЛЬКО за типографику проекта.
+// Не пишите тут какую-либо стороннюю стилизацию.
+
+// @font-face {
+//   font-family: 'FONTNAME';
+//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
+//        url('../fonts/FONTNAME.woff') format('woff'),
+//        url('../fonts/FONTNAME.ttf')  format('truetype');
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+
+
+body {
+  // ТОЛЬКО типографика!
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $text-color;
+}
+
+// .h1,
+// .h2,
+// .h3,
+// .h4,
+// .h5,
+// .h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+  font-weight: 700;
+  line-height: $line-height;
+  color: $title-color;
+}
+
+// .h1,
+// .h2,
+// .h3,
+h1,
+h2,
+h3 {
+  margin-top: $line-height;
+  margin-bottom: ($line-height / 2);
+}
+
+// .h4,
+// .h5,
+// .h6,
+h4,
+h5,
+h6 {
+  margin-top: ($line-height / 2);
+  margin-bottom: ($line-height / 2);
+}
+
+// .h1,
+/* h1 {
+  font-size: $font-size--h1;
+}
+
+// .h2,
+h2 {
+  font-size: $font-size--h2;
+}
+
+// .h3,
+h3 {
+  font-size: $font-size--h3;
+}
+
+// .h4,
+h4 {
+  font-size: $font-size--h4;
+}
+
+// .h5,
+h5 {
+  font-size: $font-size--h5;
+}
+
+// .h6,
+h6 {
+  font-size: $font-size--h6;
+} */
+
+// .p,
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+figure {
+  margin-top: ($line-height / 2);
+  margin-bottom: ($line-height / 2);
+  color: currentColor;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  padding-left: 1.2em;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+  line-height: inherit;
+}
+
+hr {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+  border: 0;
+  border-top: 1px solid $border-color;
+}
+
+// .small,
+small {
+  // font-size: $font-size--small;
+}
+
+sub,
+sup {
+  font-size: 70%;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+blockquote {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
