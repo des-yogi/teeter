@@ -17,7 +17,24 @@
     "is-mobile": [],
     "scroll-link": [],
     "to-top": [],
-    "embed-responsive": []
+    "embed-responsive": [],
+    "banner": [],
+    "features": [],
+    "operation-principle": [],
+    "certificates": [],
+    "testing": [],
+    "results": [],
+    "manual": [],
+    "table-features": [],
+    "delivery-alert": [],
+    "shop": [],
+    "shop-card": [],
+    "helpful-info": [],
+    "helpful-info-card": [],
+    "teeter-link": [],
+    "contacts-block": [],
+    "map": [],
+    "copyrights": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",
@@ -25,10 +42,8 @@
     "./src/scss/mixins.scss",
     "./src/scss/functions.scss"
   ],
-  "addCssAfter": [
-  ],
-  "singleCompiled": [
-  ],
+  "addCssAfter": [],
+  "singleCompiled": [],
   "addJsBefore": [
     "./node_modules/picturefill/dist/picturefill.min.js",
     "./node_modules/jquery/dist/jquery.min.js",
