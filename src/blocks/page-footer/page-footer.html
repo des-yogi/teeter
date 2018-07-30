@@ -1,11 +1,82 @@
 <!--DEV
-
-Нужно убрать пробел между @-ами:
-
 @ @include('blocks/page-footer/page-footer.html')
-
 -->
 
 <footer class="page-footer" role="contentinfo">
-  page-footer
+  <div class="container">
+    <div class="page-footer__row">
+
+      <div class="page-footer__menu-block">
+        <h4 class="page-footer__menu-title">Разделы</h4>
+        <ul class="page-footer__menu">
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Начало</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Как это работает</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Сертификаты</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Тестирование</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Инструкция</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Особенности</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>История</a>
+          </li>
+          <li class="page-footer__menu-item">
+            <a class="data-scroll  page-footer__menu-link" href="#ID" data-scroll-link>Купить</a>
+          </li>
+        </ul>
+
+        <h4 class="page-footer__menu-title">Доставка и оплата</h4>
+        <h4 class="page-footer__menu-title">Эксклюзивный импортёр в Украину:
+          <a href="">FD fitnessdom — салон-магазин товаров для фитнеса
+            <img src="img/" alt="">
+          </a>
+        </h4>
+      </div>
+
+      <div class="page-footer__map-block">
+
+        <article class="contacts-block">
+          <h2 class="contacts-block__title">Контакты</h2>
+          <ul class="contacts-block__list">
+            <li class="contacts-block__item">04070, г. Киев, <br> ул. Борисоглебская, 17/1.</li>
+            <li class="contacts-block__item">ПН-ПТ  10.00 - 19.00 <br> СБ 11.00 - 15.00 <br> ВС - Выходной</li>
+            <li class="contacts-block__item">
+              <a href="tel:+380445016001">+38 (044) 501-60-01</a>
+            </li>
+            <li class="contacts-block__item">
+              <a href="mailto:info@fitnessdom.com.ua">info@fitnessdom.com.ua</a>
+            </li>
+            <li class="contacts-block__item">
+              <a href="tel:+380445016001">Позвонить</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="map">
+          <div class="map__content"></div>
+          <div class="map_decor"></div>
+        </article>
+      </div>
+
+    </div>
+    <article class="copyrights">
+      <div class="copyrights__tm">© Сopyright 2018. Fitness Dom.  Тeeter — официальная зарегистрированная торговая марка.</div>
+      <div class="copyrights__dev">
+        <a href="http://it-doors.com" target="_blank" rel="nofollow noopener">IT-Doors
+          <span>Сreating by</span>
+          <img src="" alt="">
+        </a>
+      </div>
+    </article>
+  </div>
 </footer>
