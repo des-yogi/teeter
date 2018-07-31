@@ -7,30 +7,6 @@
   border: 0;
 }
 
-@mixin header-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-}
-
-@mixin dubble-line($bottom: -25px, $left: 100%, $shift-x: -100%, $mirror: 1) {
-  &::after {
-    position: absolute;
-    bottom: $bottom;
-    left: $left;
-    transform: translateX($shift-x) scaleX($mirror);
-    content: "";
-    width: 76px;
-    height: 14px;
-    background: url(../img/dubble-line.svg) no-repeat center center;
-    background-size: cover;
-  }
-}
-
 @mixin list-decorated {
   padding-left: 50px;
   position: relative;
