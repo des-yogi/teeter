@@ -115,12 +115,12 @@ h6 {
 
 h1,
 .h1 {
-   font-size: 32px;
-   text-align: center;
-   color: $main-color;
-   text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  font-size: 32px;
+  text-align: center;
+  color: $main-color;
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
 
-   @media (min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     text-align: left;
     font-size: 38px;
   }
@@ -132,22 +132,52 @@ h1,
 
 h2,
 .h2 {
-   font-size: 28px;
+  position: relative;
+  margin-bottom: 60px;
+  font-size: 28px;
+  text-align: center;
 
-   @media (min-width: $screen-md) {
+  &:after {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    display: block;
+    height: 3px;
+    width: 28%;
+    background-color: $accent-blue-color;
+
+    @media (min-width: $screen-md) {
+      width: 33.33%;
+      bottom: -40px;
+      left: 60px;
+      transform: none;
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: -50px;
+      left: 105px;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 80px;
     font-size: 30px;
+    text-align: left;
   }
 
   @media (min-width: $screen-xl) {
+    margin-bottom: 105px;
     font-size: 48px;
   }
 }
 
 h3,
 .h3 {
-   font-size: 24px;
+  font-size: 24px;
 
-   @media (min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     font-size: 38px;
   }
 
@@ -158,9 +188,9 @@ h3,
 
 h4,
 .h4 {
-   font-size: 17px;
+  font-size: 17px;
 
-   @media (min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     font-size: 20px;
   }
 
@@ -171,9 +201,9 @@ h4,
 
 h5,
 .h5 {
-   font-size: 16px;
+  font-size: 16px;
 
-   @media (min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     font-size: 18px;
   }
 

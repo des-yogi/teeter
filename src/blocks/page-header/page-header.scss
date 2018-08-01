@@ -9,7 +9,7 @@
 
   @media (min-width: $screen-xl) {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 
   $block-name:                &; // #{$block-name}__element
@@ -85,11 +85,8 @@
       }
     }
 
-    @media (min-width: $screen-lg) {
-      max-width: 390px;
-    }
-
     @media (min-width: $screen-xl) {
+      max-width: 390px;
       order: 1;
       padding-top: 13px;
       padding-bottom: 15px;
