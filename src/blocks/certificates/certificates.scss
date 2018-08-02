@@ -1,21 +1,45 @@
 .certificates {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  @media (min-width: $screen-md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 100px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
   &__title {
+    padding-left: 20px;
+    padding-right: 20px;
 
+    @media (min-width: $screen-md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__slides {
-    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
 
   &__pagination {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 25px;
-    // padding-left: 16px;
-    // padding-right: 16px;
+
+    padding-left: 20px;
+    padding-right: 20px;
 
     .swiper-pagination-bullet {
       width: 62px;
@@ -28,6 +52,7 @@
       background-size: cover;
       opacity: 0.2;
       //outline: none;
+      transition: all 0.3s ease;
 
       &:hover,
       &:focus {
@@ -58,65 +83,162 @@
     }
 
     .swiper-pagination-bullet-active {
+      position: relative;
       opacity: 1;
       outline: none;
+
+      &::after {
+        position: absolute;
+        //z-index: 10;
+        bottom: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        display: block;
+        width: 100%;
+        height: 6px;
+        background-color: $second-color;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        @media (min-width: $screen-md) {
+          bottom: -35px;
+          width: 155px;
+          height: 10px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        @media (min-width: $screen-xl) {
+          bottom: -40px;
+          width: 285px;
+          height: 15px;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+      }
     }
 
     @media (min-width: $screen-md) {
+      padding-left: 0;
+      padding-right: 0;
       margin-bottom: 30px;
     }
 
     @media (min-width: $screen-xl) {
-      margin-bottom: 20px;
+      margin-bottom: 35px;
     }
   }
 
   &__wrapper {
-    // width: calc(100% - 40px);
 
-    /* &::before {
-      position: fixed;
-      z-index: -1;
-      top: -20px;
-      bottom: -20px;
-      left: -20px;
-      content: "";
-      display: block;
-      width: calc(100% + 40px);
-      height: 100%;
-      background-color: yellow;
-    } */
+    padding-top: 5px;
+    padding-bottom: 20px;
   }
 
   &__slide {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: $white;
+    box-shadow: $shadow;
+    border-radius: $border-radius;
 
-  }
+    @media (min-width: $screen-md) {
+      max-width: 100%;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
 
-  &__tab-wrapper {
-
-  }
-
-  &__tab-mark {
-
+    @media (min-width: $screen-xl) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
   }
 
   &__text {
+    padding-left: 20px;
+    padding-right: 20px;
 
+    @media (min-width: $screen-md) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
 
   &__para {
 
   }
 
-  &__list {
+  &__cul-img {
+    padding: 20px 0;
+    text-align: center;
 
+    img {
+      display: inline-block;
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 30px 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 45px 0;
+    }
+  }
+
+  &__list {
+    @include list-dash;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: $title-color;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
   }
 
   &__item {
 
+    &:nth-child(odd) {
+      margin-right: 40px;
+    }
+
+    @media (min-width: $screen-md) {
+      width: calc(50% - 20px);
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 40px;
+    }
   }
 
   &__link {
+    font-weight: 700;
+    color: $second-color;
+    text-decoration: none;
+    text-decoration-skip: ink;
 
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
   }
 }

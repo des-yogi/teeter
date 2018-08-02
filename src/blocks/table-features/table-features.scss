@@ -1,9 +1,92 @@
-// В этом файле должны быть стили для БЭМ-блока table-features, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .table-features {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+
+  }
+
+  &__slides {
+
+  }
+
+  &__slide {
+
+  }
+
+  &__slide-row {
+
+  }
+
+  &__img-wrapper {
+    width: 180px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--round {
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: red;
+    }
+  }
+
+  &__img {
+
+  }
+
+  &__text-wrapper {
+
+  }
+
+  &__slide-title {
+    text-align: center;
+  }
+
+  &__slide-text {
+
+  }
+
+  &__slide-list {
+
+  }
+
+  &__slide-item {
+
+  }
+
+  &__controls {
+
+  }
+
+  &__button-next {
+
+  }
+
+  &__button-prev {
+
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
+    .swiper-pagination-bullet {
+      width: auto;
+      height: auto;
+      font-family: $font-family--headings;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1;
+      color: $text-muted;
+      opacity: 1;
+      background-color: transparent;
+    }
+
+    .swiper-pagination-bullet-active {
+      font-size: 100px;
+      color: $main-color;
+    }
+  }
 }
