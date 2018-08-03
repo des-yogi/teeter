@@ -34,7 +34,8 @@
     "teeter-link": [],
     "contacts-block": [],
     "map": [],
-    "copyrights": []
+    "copyrights": [],
+    "animation": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",
