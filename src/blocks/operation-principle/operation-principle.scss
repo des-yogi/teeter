@@ -1,0 +1,119 @@
+.operation-principle {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 100px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    // text-align: center;
+  }
+
+  &__col-video {
+    @include col(xs, 12);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 6);
+    margin-bottom: 35px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $screen-xl) {
+      //order: -1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-text {
+    // position: relative;
+    @include col(xs, 12);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 1);
+    @include col(xl, 5);
+    height: 325px;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 97%;
+      height: 70px;
+      background: linear-gradient(to top, $body-bg 20%, transparent);
+
+      @media (min-width: $screen-xl) {
+        background: linear-gradient(to top, $body-bg 30%, transparent);
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 500px;
+    }
+  }
+
+  &__text {
+    width: 100% !important;
+    min-width: 250px !important;
+    max-width: none !important;
+  }
+
+  &__video {
+    margin: 0;
+
+    figcaption {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+
+      @media (min-width: $screen-md) {
+        font-size: 16px;
+      }
+
+      @media (min-width: $screen-xl) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__video-wrapper {
+    @include right-shadow;
+    margin-bottom: 35px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__video-content {
+    border-radius: 20px;
+
+    @media (min-width: $screen-md) {
+      // height: 255px;
+    }
+
+    @media (min-width: $screen-xl) {
+      // height: 330px;
+    }
+  }
+
+  &__content {
+    padding-right: 40px;
+  }
+
+  &__descr {
+
+  }
+}
+

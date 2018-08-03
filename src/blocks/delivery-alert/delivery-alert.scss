@@ -1,0 +1,87 @@
+.delivery-alert {
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 50px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+  }
+
+  &__caption {
+    @include col(md, 3);
+    margin: 0;
+    background-color: $accent-red-color;
+
+    span {
+      display: block;
+      width: 100%;
+      padding: 20px 15px;
+      text-transform: uppercase;
+      color: $white;
+
+      @media (min-width: $screen-md) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        margin: auto;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    @include col(md, 9);
+    background-color: $white;
+
+    span {
+      display: block;
+      padding: 20px 15px;
+
+      @media (min-width: $screen-md) {
+        padding-left: 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: auto;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-left: 40px;
+      }
+    }
+
+    br {
+      display: none;
+
+      @media (min-width: $screen-md) {
+        display: inline;
+      }
+
+      @media (min-width: 840px) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+}

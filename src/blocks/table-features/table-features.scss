@@ -1,0 +1,211 @@
+.table-features {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 100px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__slides {
+    overflow: hidden;
+  }
+
+  &__slide {
+
+  }
+
+  &__slide-row {
+    box-sizing: border-box;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+
+  &__col-img {
+    @include col(md, 5);
+    @include col(xl, 7);
+  }
+
+  &__img-wrapper {
+    width: 180px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      width: 275px;
+      height: 275px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 485px;
+      height: 485px;
+    }
+
+    &--round {
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: $white;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__text-wrapper {
+    @include col(md, 7);
+    @include col(xl, 5);
+  }
+
+  &__slide-title {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+
+    &:after {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      display: block;
+      width: calc(100% / 11);
+      height: 3px;
+      background-color: $accent-blue-color;
+
+      @media (min-width: $screen-md) {
+        bottom: -28px;
+        left: 0;
+        transform: none;
+        width: calc(100% / 2);
+      }
+
+      @media (min-width: $screen-xl) {
+        bottom: -35px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 60px;
+      text-align: left;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 77px;
+    }
+  }
+
+  &__slide-text {
+    margin-bottom: 20px;
+  }
+
+  &__slide-list {
+
+    @media (min-width: $screen-xl) {
+      margin-top: 25px;
+    }
+  }
+
+  &__slide-item {
+
+    @media (min-width: $screen-xl) {
+      margin-top: 25px;
+    }
+  }
+
+  &__controls {
+    margin-top: 20px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+  }
+
+  &__btn-wrapper {
+    margin-bottom: 30px;
+    text-align: center;
+
+    button:first-of-type {
+      margin-right: 10px;
+    }
+
+    .swiper-button-disabled {
+      background-color: $white;
+      cursor: not-allowed;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+
+      span {
+        width: 30px;
+        border-color: $how-work-bg;
+
+        &::after {
+          background-color: $how-work-bg;
+        }
+      }
+    }
+
+    @include col-offset(md, 5);
+    @include col-offset(xl, 7);
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 45px;
+      text-align: left;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
+    .swiper-pagination-bullet {
+      width: auto;
+      height: auto;
+      font-family: $font-family--headings;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1;
+      color: $text-muted;
+      opacity: 1;
+      background-color: transparent;
+
+      @media (min-width: $screen-md) {
+        font-size: 100px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      font-size: 100px;
+      color: $main-color;
+      outline: none;
+
+      @media (min-width: $screen-md) {
+        font-size: 150px;
+      }
+    }
+
+    @include col-offset(md, 5);
+    @include col-offset(xl, 7);
+
+    @media (min-width: $screen-md) {
+      justify-content: space-between;
+    }
+  }
+}

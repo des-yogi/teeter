@@ -1,11 +1,22 @@
 <!--DEV
-
-Нужно убрать пробел между @-ами:
-
 @ @include('blocks/page-header/page-header.html')
-
 -->
 
 <header class="page-header" role="banner">
-  page-header
+  <div class="row page-header__row">
+
+    <div class="page-header__col-logo">
+      <a class="logo"href="/" title="Teeter logo">
+        <img src="img/teeter-logo.svg" alt="Teeter logo" width="280" height="51">
+      </a>
+    </div>
+
+    <div class="page-header__col-advice">
+      <div class="page-header__advice">
+        <a class="scroll-link  page-header__advice-btn" href="#page-footer" data-scroll-link>Бесплатная <br>консультация</a>
+        <a class="page-header__phone-link" href="tel:+380445016001">+38 (044) 501-60-01</a>
+      </div>
+    </div>
+
+  </div>
 </header>

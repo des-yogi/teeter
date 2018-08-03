@@ -7,30 +7,6 @@
   border: 0;
 }
 
-@mixin header-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-}
-
-@mixin dubble-line($bottom: -25px, $left: 100%, $shift-x: -100%, $mirror: 1) {
-  &::after {
-    position: absolute;
-    bottom: $bottom;
-    left: $left;
-    transform: translateX($shift-x) scaleX($mirror);
-    content: "";
-    width: 76px;
-    height: 14px;
-    background: url(../img/dubble-line.svg) no-repeat center center;
-    background-size: cover;
-  }
-}
-
 @mixin list-decorated {
   padding-left: 50px;
   position: relative;
@@ -49,6 +25,91 @@
 
     @media (min-width: $screen-md) {
       transform: translateY(-3px);
+    }
+  }
+}
+
+@mixin left-shadow {
+  position: relative;
+  box-shadow: -15px 20px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 15px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #A2DBEB;
+    border-radius: 20px;
+    opacity: 0.25;
+
+    @media (min-width: $screen-md) {
+      left: -20px;
+      top: 20px;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    box-shadow: -15px 25px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin right-shadow {
+  position: relative;
+  box-shadow: -15px 20px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 15px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #A2DBEB;
+    border-radius: 20px;
+    opacity: 0.25;
+
+    @media (min-width: $screen-md) {
+      left: 20px;
+      top: 20px;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    box-shadow: 15px 25px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin list-dash {
+  padding-left: 0;
+
+  li {
+    position: relative;
+    padding-left: 40px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 50px;
+    }
+  }
+
+  li::before {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 20px;
+    height: 3px;
+    border-radius: 0;
+
+    @media (min-width: $screen-md) {
+      top: 14px;
+      width: 30px;
     }
   }
 }

@@ -1,56 +1,111 @@
 // Этот блок ответственен ТОЛЬКО за типографику проекта.
-// Не пишите тут какую-либо стороннюю стилизацию.
 
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff'),
-//        url('../fonts/FONTNAME.ttf')  format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-// }
+/* open-sans-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('../fonts/open-sans-v15-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v15-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v15-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v15-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* montserrat-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../fonts/montserrat-v12-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v12-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* montserrat-600 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+       url('../fonts/montserrat-v12-cyrillic_latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v12-cyrillic_latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* montserrat-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../fonts/montserrat-v12-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v12-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 
 
 body {
   // ТОЛЬКО типографика!
   font-family: $font-family;
-  font-size: $font-size;
+  font-size: 15px;
+  font-weight: 400;
   line-height: $line-height;
   color: $text-color;
+
+  @media (min-width: $screen-md) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 18px;
+  }
 }
 
-// .h1,
-// .h2,
-// .h3,
-// .h4,
-// .h5,
-// .h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family;
-  font-weight: 700;
+  font-family: $font-family--headings;
+  font-weight: 600;
   line-height: $line-height;
   color: $title-color;
 }
 
-// .h1,
-// .h2,
-// .h3,
-h1,
-h2,
-h3 {
-  margin-top: $line-height;
-  margin-bottom: ($line-height / 2);
+.h1,
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-// .h4,
-// .h5,
-// .h6,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h2,
+h3,
 h4,
 h5,
 h6 {
@@ -58,35 +113,104 @@ h6 {
   margin-bottom: ($line-height / 2);
 }
 
-// .h1,
-/* h1 {
-  font-size: $font-size--h1;
+h1,
+.h1 {
+  font-size: 32px;
+  text-align: center;
+  color: $main-color;
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: $screen-md) {
+    text-align: left;
+    font-size: 38px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 62px;
+  }
 }
 
-// .h2,
-h2 {
-  font-size: $font-size--h2;
+h2,
+.h2 {
+  position: relative;
+  margin-bottom: 60px;
+  font-size: 28px;
+  text-align: center;
+
+  &:after {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    display: block;
+    height: 3px;
+    width: 28%;
+    background-color: $accent-blue-color;
+
+    @media (min-width: $screen-md) {
+      width: 33.33%;
+      bottom: -40px;
+      left: 60px;
+      transform: none;
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: -50px;
+      left: 105px;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 80px;
+    font-size: 30px;
+    text-align: left;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 105px;
+    font-size: 48px;
+  }
 }
 
-// .h3,
-h3 {
-  font-size: $font-size--h3;
+h3,
+.h3 {
+  font-size: 24px;
+
+  @media (min-width: $screen-md) {
+    font-size: 28px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 36px;
+  }
 }
 
-// .h4,
-h4 {
-  font-size: $font-size--h4;
+h4,
+.h4 {
+  font-size: 17px;
+
+  @media (min-width: $screen-md) {
+    font-size: 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 26px;
+  }
 }
 
-// .h5,
-h5 {
-  font-size: $font-size--h5;
-}
+h5,
+.h5 {
+  font-size: 16px;
 
-// .h6,
-h6 {
-  font-size: $font-size--h6;
-} */
+  @media (min-width: $screen-md) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-xl) {
+    font-size: 22px;
+  }
+}
 
 // .p,
 p,
@@ -97,18 +221,43 @@ blockquote,
 pre,
 address,
 figure {
-  margin-top: ($line-height / 2);
+  margin-top: 0;
   margin-bottom: ($line-height / 2);
   color: currentColor;
+  hyphens: auto;
+
+  a {
+    font-size: inherit;
+    text-decoration: none;
+    color: $second-color;
+    text-decoration-skip: ink;
+
+    &:hover {
+      text-decoration: underline;
+      color: inherit;
+    }
+  }
 }
 
 address {
   font-style: normal;
 }
 
+p + p,
+p + ol,
+p + ul {
+  margin-top: $line-height / 2;
+}
+
+ol + p,
+ul + p {
+  margin-top: $line-height / 2;
+}
+
 ul,
 ol {
-  padding-left: 1.2em;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 ol ol,
@@ -121,6 +270,47 @@ ul ol {
 
 li {
   line-height: inherit;
+}
+
+li + li {
+  margin-top: $line-height / 2;
+}
+
+ol{
+  counter-reset: myCounter;
+
+  li:before {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 0.7em;
+    counter-increment: myCounter;
+    content: counter(myCounter)".";
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 600;
+    text-align: left;
+    line-height: inherit;
+    color: $second-color;
+  }
+}
+
+ul {
+  li:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 4px;
+    height: 4px;
+    margin-right: 0.7em;
+    margin-top: -3px;
+    border-radius: 50%;
+    background-color: $second-color;
+
+    @media (min-width: $screen-xl) {
+      width: 5px;
+      height: 5px;
+    }
+  }
 }
 
 hr {
@@ -137,12 +327,27 @@ small {
 
 sub,
 sup {
-  font-size: 70%;
+  position: relative;
+  vertical-align: baseline;
+  font-size: 50%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.6em;
+}
+
+sub {
+  bottom: -0.25em;
 }
 
 b,
 strong {
   font-weight: bolder;
+}
+
+a, b, i, strong, em, small, code {
+  line-height: 0;
 }
 
 abbr[title] {
@@ -153,4 +358,8 @@ blockquote {
   padding: 0;
   margin-left: 0;
   margin-right: 0;
+}
+
+q {
+  quotes:  "«" "»";
 }

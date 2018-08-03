@@ -1,0 +1,239 @@
+.results {
+  position: relative;
+  margin-bottom: 50px;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: calc(100% - 140px);
+    background-color: $how-work-bg;
+
+    @media (min-width: $screen-xl) {
+      height: calc(100% - 280px);
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 100px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__content {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: $white;
+    box-shadow: $shadow;
+    border-radius: $border-radius * 2;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 50px 110px;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    line-height: 1.3em;
+    color: $main-color;
+
+    span {
+      display: block;
+      text-transform: uppercase;
+
+      @media (min-width: $screen-md) {
+        display: inline;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 35px;
+    font-weight: 700;
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+  }
+
+  &__row {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      margin-right: -40px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: -110px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__col-control {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include col(md, 9);
+
+    @media (min-width: $screen-xl) {
+      padding-right: 100px;
+    }
+  }
+
+  &__fig {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    width: calc(50% - 10px);
+    text-align: center;
+
+    img {
+      width: 100%;
+
+      @media (min-width: $screen-md) {
+        width: 175px;
+        height: 212px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 225px;
+        height: 272px;
+      }
+    }
+
+    figcaption {
+      padding-top: 5px;
+      padding-bottom: 20px;
+      font-family: $font-family--headings;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5em;
+
+      span {
+        display: block;
+        font-weight: 700;
+      }
+
+      @media (min-width: $screen-md) {
+        padding-bottom: 0;
+        font-size: 14px;
+      }
+
+      @media (min-width: $screen-xl) {
+        font-size: 18px;
+      }
+    }
+
+    &--control-group {
+
+    }
+
+    &--teeter-group {
+
+      span {
+        @media (min-width: $screen-xl) {
+          padding: 0 22px;
+        }
+      }
+    }
+  }
+
+  &__col-totals {
+    margin-bottom: 20px;
+
+    @include col(md, 3);
+
+    @media (min-width: $screen-md) {
+      padding-right: 0;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 0;
+    }
+  }
+
+  &__totals {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      flex-direction: column;
+    }
+  }
+
+  &__total {
+    width: calc(50% - 10px);
+    padding: 15px 20px;
+    font-family: $font-family--headings;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: $white;
+
+    &--control-group {
+      background-color: $accent-blue-color;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 25px;
+      }
+    }
+
+    &--teeter-group {
+      background-color: $accent-red-color;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 30px 40px;
+      font-size: 24px;
+    }
+  }
+
+  &__footnote {
+    margin-bottom: 0;
+    font-size: 12px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 40px;
+      padding-right: 200px;
+    }
+  }
+}

@@ -1,8 +1,121 @@
-// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (min-width: $screen-md) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
 
   $block-name:                &; // #{$block-name}__element
+
+  &__row {
+
+  }
+
+  &__col-logo {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(lg, 4);
+    @include col(xl, 4);
+    margin-bottom: 25px;
+
+    .logo {
+      margin: auto;
+
+      @media (min-width: $screen-md) {
+        margin: initial;
+      }
+    }
+  }
+
+  &__col-advice {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col-offset(lg, 3)
+    @include col(lg, 5);
+    @include col-offset(xl, 0)
+    @include col(xl, 8);
+  }
+
+  &__advice {
+    text-align: center;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__advice-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 60px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    font-family: $font-family--headings;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2em;
+    text-decoration: none;
+    color: $white;
+    background: $main-color;
+    box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
+    border-radius: $border-radius;
+
+    &:hover,
+    &:active {
+      background: $second-color;
+    }
+
+    @media (min-width: $screen-md) {
+      padding-top: 10px;
+      padding-bottom: 12px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      br {
+        display: none;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      max-width: 390px;
+      order: 1;
+      padding-top: 13px;
+      padding-bottom: 15px;
+      margin-left: 60px;
+      margin-bottom: 0;
+      font-size: 24px;
+    }
+  }
+
+  &__phone-link {
+    display: inline-block;
+    padding: 1px;
+    margin: auto;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    color: $text-color;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: auto;
+      margin-right: 0;
+      font-weight: 600;
+      text-align: right;
+    }
+  }
 }

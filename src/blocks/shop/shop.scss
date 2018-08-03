@@ -1,0 +1,18 @@
+.shop {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 100px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  &__col {
+
+  }
+}
