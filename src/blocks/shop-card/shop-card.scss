@@ -2,8 +2,27 @@
   padding-top: 20px;
   margin-bottom: 40px;
   background: $white;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
   border-radius: $border-radius;
+
+  &:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    height: 100%;
+    margin-bottom: 0;
+    align-content: space-between;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
@@ -16,6 +35,19 @@
     margin-right: auto;
     margin-bottom: 20px;
     overflow: hidden;
+
+    @include col(md, 5);
+    @include col(xl, 12);
+
+    @media (min-width: $screen-md) {
+      width: 275px;
+      height: 275px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 100%;
+      height: 285px;
+    }
   }
 
   &__add-wrapper {
@@ -39,23 +71,42 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   &__text-wrapper {
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 20px;
+    text-align: center;
+
+    @include col(md, 7);
+    @include col(xl, 12);
+
+    @media (min-width: $screen-md) {
+      padding-right: 25px;
+      text-align: left;
+    }
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100% - 285px - 123px - 20px - 20px);
+      padding-right: 10px;
+      text-align: center;
+    }
   }
 
   &__title {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 16px;
-    text-align: center;
+    //text-align: center;
 
     span {
       display: block;
+      margin-top: 5px;
       font-size: 20px;
       font-weight: 700;
       color: $main-color;
@@ -65,8 +116,13 @@
   &__price {
     font-size: 20px;
     font-weight: 600;
-    text-align: center;
+    //text-align: center;
     color: $main-color;
+
+    @media (min-width: $screen-xl) {
+      margin-top: auto;
+      font-size: 24px;
+    }
   }
 
   &__price-num {
@@ -75,7 +131,14 @@
 
   &__features-list {
     margin-bottom: 20px;
-    text-align: center;
+    font-family: $font-family--headings;
+    font-size: 14px;
+    font-weight: 600;
+    //text-align: center;
+
+    @media (min-width: $screen-xl) {
+      font-size: 15px;
+    }
   }
 
   &__features-item {
@@ -103,12 +166,54 @@
         &:hover,
         &:active {
           background-color: $main-color;
+
+          @media (min-width: $screen-xl) {
+            color: $white;
+            background-color: $second-color;
+          }
+        }
+
+        @media (min-width: $screen-xl) {
+          color: $second-color;
+          background-color: $white;
+          border-radius: 0;
+          border-top: 1px solid $border-color;
         }
       }
 
       &--buy {
         border-radius: 0 0 0 10px;
+
+        &:hover,
+        &:active {
+
+          @media (min-width: $screen-xl) {
+            color: $white;
+            background-color: $main-color;
+          }
+        }
+
+        @media (min-width: $screen-xl) {
+          order: 1;
+          color: $main-color;
+          background-color: $white;
+          border-radius: 0 0 10px 10px;
+        }
       }
+
+      @media (min-width: $screen-xl) {
+        font-size: 22px;
+        padding-top: 19px;
+        padding-bottom: 20px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-direction: column;
     }
   }
 }

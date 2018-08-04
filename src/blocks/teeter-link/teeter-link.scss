@@ -1,9 +1,186 @@
-// В этом файле должны быть стили для БЭМ-блока teeter-link, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .teeter-link {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: left;
+  color: $white;
+  background-color: $main-color;
+
+  @media (min-width: $screen-md) {
+    background-image: url(../img/teeter-link-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right center;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-top: 0;
+    text-align: inherit;
+    color: inherit;
+
+    .h4 {
+      display: block;
+      color: inherit;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__row {
+
+  }
+
+  &__col-text {
+    margin-bottom: 40px;
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col-offset(xl, 1);
+    @include col(xl, 5);
+
+    @media (min-width: $screen-md) {
+      align-self: flex-end;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 35px;
+    font-family: $font-family--headings;
+    font-weight: 600;
+
+    span {
+
+      img {
+        display: block;
+        width: 55px;
+      }
+
+      &:first-child {
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+
+      &:last-child {
+        flex-shrink: 1;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &__store-wrapper {
+    @include text-hide;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__store-link {
+    width: calc(50% - 10px);
+    max-width: 180px;
+
+    &--apple {
+      margin-right: 20px;
+    }
+
+    &--google {
+    }
+  }
+
+  &__col-app {
+    position: relative;
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+  }
+
+  &__img-wrapper {
+    width: 155px;
+    height: 324px;
+    margin-left: auto;
+    border-radius: $border-radius;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 216px;
+      height: 450px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 284px;
+      height: 593px;
+    }
+  }
+
+  &__app {
+
+  }
+
+  &__demo-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 195px;
+    right: 100px;
+    width: 181px;
+    height: 100px;
+    text-decoration: none;
+    color: $white;
+    background-color: $gray-darker;
+    background: url(../img/btn-bg.jpg) no-repeat center;
+    background-size: cover;
+    box-shadow: -5px 15px 15px rgba(0, 0, 0, 0.15);
+    border-radius: $border-radius * 2;
+    transition: all 0.3s ease-in-out;
+
+    span {
+      margin: auto;
+      font-family: $font-family--headings;
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      line-height: 1.5em;
+      text-transform: uppercase;
+    }
+
+    &:hover,
+    &:active {
+      box-shadow: -5px 15px 15px rgba(0, 0, 0, 0.25);
+
+      span {
+        // transform: scale3D(1.06,1.06,1);
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      top: 320px;
+    }
+
+    @media (min-width: $screen-xl) {
+      top: 450px;
+      right: 195px;
+    }
+  }
 }
