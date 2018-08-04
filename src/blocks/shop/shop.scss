@@ -10,9 +10,19 @@
   &__row {
     margin-left: -20px;
     margin-right: -20px;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
   }
 
   &__col {
-
+    @include col(xl, 3);
   }
 }
