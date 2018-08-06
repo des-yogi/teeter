@@ -1,9 +1,134 @@
-// В этом файле должны быть стили для БЭМ-блока contacts-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .contacts-block {
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $white;
+
+  @media (min-width: $screen-md) {
+    order: 1;
+    width: calc(50% - 10px);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: $second-color;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin-bottom: 0;
+    margin-bottom: 35px;
+    font-family: $font-family--headings;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 35px;
+
+    a {
+      color: inherit;
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      display: block;
+      width: 25px;
+      margin-right: 0;
+      margin-top: 0;
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--address {
+
+      &:before {
+        height: 40px;
+        background-image: url(../img/pin-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+
+    &--work-time {
+
+      &:before {
+        height: 32px;
+        background-image: url(../img/oclock-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+
+    &--tel {
+
+      &:before {
+        height: 32px;
+        background-image: url(../img/phone-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+
+    &--email {
+
+      &:before {
+        height: 21px;
+        background-image: url(../img/letter-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+  }
+
+  &__btn-tel {
+    display: block;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    font-family: $font-family--headings;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    background-color: $second-color;
+
+    &:hover,
+    &:active {
+      background-color: $main-color;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+  }
 }
