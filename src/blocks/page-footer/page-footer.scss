@@ -1,8 +1,170 @@
-// В этом файле должны быть стили для БЭМ-блока page-footer, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-.page-footer {
+ .page-footer {
+  padding-top: 40px;
+  padding-bottom: 35px;
+  background-color: $footer-bg;
 
   $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    @media (min-width: $screen-md) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+
+  &__col-menu {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-bottom: 40px;
+    @include col(xs, 12);
+    @include col(xl, 4);
+
+    @media (min-width: $screen-md) {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-map {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    @include col(xs, 12);
+    @include col(xl, 8);
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+
+  &__menu-block {
+    color: $white;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__title-wrapper {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-direction: column-reverse;
+      margin-top: auto;
+    }
+  }
+
+  &__menu-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: inherit;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 30px;
+    }
+
+    &--delivery {
+
+      @media (min-width: $screen-md) {
+        order: 1;
+        width: calc(50% - 10px);
+      }
+
+      @media (min-width: $screen-xl) {
+        width: auto;
+        margin-bottom: 75px;
+      }
+    }
+
+    &--owner {
+      margin-bottom: 0;
+
+      @media (min-width: $screen-md) {
+        width: calc(50% - 10px);
+        margin-right: 10px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: baseline;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__menu-item {
+    width: calc(50% - 10px);
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    &::before {
+      display: none;
+    }
+
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+
+    @media (min-width: $screen-md) {
+      width: calc(25% - 10px);
+    }
+
+    @media (min-width: $screen-xl) {
+      width: calc(50% - 10px);
+    }
+  }
+
+  &__menu-link {
+    color: inherit;
+    opacity: 0.55;
+  }
+
+  &__delivery-link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  &__owner-link {
+    @include text-hide;
+    display: inline-block;
+    margin-top: 20px;
+    transition: $transition-base;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 10px;
+      transform: translateY(10px);
+    }
+  }
 }

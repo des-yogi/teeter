@@ -99,8 +99,10 @@ module.exports.event = function event(elem, _eventNames, handler, mode) {
         if (['scroll', 'touchstart', 'touchmove'].indexOf(eventName) != -1 && supportsPassive) {
             options = { passive: true }
         }
-
-        elem[prefix + 'EventListener'](eventName, handler, options)
+        //my modification
+        if (elem) {
+          elem[prefix + 'EventListener'](eventName, handler, options)
+        }
     })
 }
 
@@ -375,13 +377,13 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports) {
 
 module.exports = function log(level, msg, more) {
-    var func = console[level] || console.log
+    var func = console[level] || console.log;
     var args = [
         'Baron: ' + msg,
         more
-    ]
+    ];
 
-    Function.prototype.apply.call(func, console, args)
+    Function.prototype.apply.call(func, console, args);
 }
 
 
@@ -405,11 +407,11 @@ var rm = __webpack_require__(0).rm
 var clone = __webpack_require__(0).clone
 var qs = __webpack_require__(0).qs
 
-var _baron = baron // Stored baron value for noConflict usage
+var _baron = baron; // Stored baron value for noConflict usage
 // var Item = {}
-var pos = ['left', 'top', 'right', 'bottom', 'width', 'height']
+var pos = ['left', 'top', 'right', 'bottom', 'width', 'height'];
 // Global store for all baron instances (to be able to dispose them on html-nodes)
-var instances = []
+var instances = [];
 var origin = {
     v: { // Vertical
         x: 'Y', pos: pos[1], oppos: pos[3], crossPos: pos[0], crossOpPos: pos[2],
@@ -451,12 +453,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 // window.baron and jQuery.fn.baron points to this function
 function baron(user) {
-    var withParams = !!user
-    var tryNode = (user && user[0]) || user
-    var isNode = typeof user == 'string' || tryNode instanceof HTMLElement
-    var params = isNode ? { root: user } : clone(user)
-    var jQueryMode
-    var rootNode
+    var withParams = !!user;
+    var tryNode = (user && user[0]) || user;
+    var isNode = typeof user == 'string' || tryNode instanceof HTMLElement;
+    var params = isNode ? { root: user } : clone(user);
+    var jQueryMode;
+    var rootNode;
     var defaultParams = {
         direction: 'v',
         barOnCls: '_scrollbar',
@@ -465,7 +467,7 @@ function baron(user) {
         cssGuru: false,
         impact: 'scroller',
         position: 'static'
-    }
+    };
 
     params = params || {}
 

@@ -70,11 +70,12 @@ $field-padding-horizontal:    0.7em;
 
 $border-radius:               10px;
 $opacity:                     0.7;
+$transition-base:             all 0.25s ease-in-out;
 $transition-time:             0.3s;
 $shadow:                      0px 5px 15px rgba(0, 0, 0, 0.35);
 
 // $menu-desktop-width:          $screen-xl;
-// $toggler-part-height:         3px;
-// $toggler-part-bg-color:       #000;
+$toggler-part-height:         2px;
+$toggler-part-bg-color:       $accent-red-color;
 
 $z-index-modal:               100;

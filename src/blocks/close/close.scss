@@ -1,9 +1,5 @@
-// В этом файле должны быть стили для БЭМ-блока close, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$toggler-part-height:         3px !default;
-$toggler-part-bg-color:       #000 !default;
+$toggler-part-height:         2px !default;
+$toggler-part-bg-color:       #ccc !default;
 
 .close {
 
@@ -13,8 +9,8 @@ $toggler-part-bg-color:       #000 !default;
   z-index: 1;
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   user-select: none;
   cursor: pointer;
 
