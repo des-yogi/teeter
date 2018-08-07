@@ -22,6 +22,9 @@
 // });
 
 window.onload = function() {
+  if (!baron) {
+    return;
+  }
   baron({
       root: '.baron',
       scroller: '.baron__scroller',
