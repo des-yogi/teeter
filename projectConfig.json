@@ -35,7 +35,15 @@
     "contacts-block": [],
     "map": [],
     "copyrights": [],
-    "animation": []
+    "animation": [],
+    "info-page": [],
+    "info-slider": [],
+    "delivery-page": [],
+    "helpful-info-page": [],
+    "order-modal": [],
+    "success-modal": [],
+    "info-footer": [],
+    "info-header": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",
