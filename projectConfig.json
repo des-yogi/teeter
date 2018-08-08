@@ -43,7 +43,8 @@
     "order-modal": [],
     "success-modal": [],
     "info-footer": [],
-    "info-header": []
+    "info-header": [],
+    "text-page": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",

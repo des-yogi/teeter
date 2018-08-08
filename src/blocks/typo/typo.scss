@@ -231,6 +231,7 @@ figure {
     text-decoration: none;
     color: $second-color;
     text-decoration-skip: ink;
+    transition: $transition-base;
 
     &:hover {
       text-decoration: underline;

@@ -1,14 +1,97 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/order-modal/order-modal.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
 <div class="order-modal">content</div>
-
 -->
+
+<div id="order-modal" class="modal  order-modal" tabindex="-1" role="dialog">
+  <div class="modal__dialog" role="document">
+    <div class="modal__content  order-modal__content">
+
+      <div class="modal__header  order-modal__header">
+        <!-- Сюда вставить хедер из блока инфо -->
+        <div class="info-header__return  order-modal__title-wrapper">
+          <span class="modal__title  h4  info-header__text  order-modal__title">Заказ товара: <span id="prod-model">EP-560</span></span>
+          <!-- <a class="info-header__return-link" href="index.html#page-footer" title="Вернуться назад">
+            <span class="close" aria-label="Вернуться назад"><span></span></span>
+          </a> -->
+           <a href="#" class="close  modal__close  order-modal__close" data-dismiss="modal" aria-label="Закрыть"><span></span>
+        </a>
+        </div>
+      </div>
+
+      <div class="modal__body  order-modal__body">
+        <div class="order-modal__form-wrapper">
+          <form id="order-modal-form" class="order-modal__form" action="" method="post">
+
+            <div class="order-modal__input-section">
+
+              <div class="order-modal__input-wrapper">
+                <input class="order-modal__input" type="text" name="name" placeholder="Имя" required pattern="^[А-Яа-яЁёЇїИиІіЄє\s]+$">
+                <span class="order-modal__error  order-modal__error--name"></span>
+              </div>
+              <div class="order-modal__input-wrapper">
+                <input class="order-modal__input" type="text" name="surname" placeholder="Фамилия" required pattern="^[А-Яа-яЁёЇїИиІіЄє\s]+$">
+                <span class="order-modal__error  order-modal__error--surname"></span>
+              </div>
+              <div class="order-modal__input-wrapper">
+                <input class="order-modal__input" type="tel" name="tel" placeholder="Телефон" required pattern="[0-9]{,12}">
+                <span class="order-modal__error  order-modal__error--tel"></span>
+              </div>
+              <div class="order-modal__input-wrapper">
+                <input class="order-modal__input" type="email" name="email" placeholder="Email" required>
+                <span class="order-modal__error  order-modal__error--email"></span>
+              </div>
+              <div class="order-modal__input-wrapper">
+                <select class="order-modal__select  order-modal__select--payment" name="payment" required>
+                  <option selected disabled>Форма оплаты</option>
+                  <option value="val-1">Безналичный расчет</option>
+                  <option value="val-2">Оплата курьеру</option>
+                </select>
+              </div>
+              <div class="order-modal__input-wrapper">
+                <select class="order-modal__select  order-modal__select--delivery" name="delivery" required>
+                  <option selected disabled>Способ доставки</option>
+                  <option value="val-1">Самовывоз</option>
+                  <option value="val-2">Новая почта</option>
+                  <option value="val-2">Курьер по Киеву</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="order-modal__order-section">
+              <figure class="order-modal__order-img">
+                <div class="order-modal__img-wrapper">
+                  <picture>
+                    <source srcset="img/" media="(min-width: 1200px)">
+                    <source srcset="img/" media="(min-width: 768px)">
+                    <img src="img/" alt="Img" width="180" height="180">
+                  </picture>
+                </div>
+                <figcaption class="order-modal__product">
+                  Инверсионный стол <span>EP-560</span>
+                </figcaption>
+               </figure>
+
+              <div class="order-modal__payment-section">
+                <div class="order-modal__input-wrapper">
+                  <input type="text" name="amount" value="1000">&nbsp;<span>грн.</span>
+                </div>
+                <div class="order-modal__input-wrapper">
+                  <button type="button" name="minus">&lsaquo;</button>
+                  <input class="order-modal__input  order-modal__input--quantity" type="text" name="quantity" value="1" min="1" max="10" pattern="^[0-9]$" size="1">
+                  <button type="button" name="plus">&rsaquo;</button>
+                </div>
+                <div class="order-modal__input-wrapper">
+                  <button class="btn" type="submit" name="submit">Купить</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

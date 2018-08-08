@@ -144,11 +144,13 @@
   &__menu-link {
     color: inherit;
     opacity: 0.55;
+    transition: $transition-base;
   }
 
   &__delivery-link {
     text-decoration: none;
     color: inherit;
+    transition: $transition-base;
 
     &:hover,
     &:active {
