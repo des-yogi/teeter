@@ -1,6 +1,3 @@
-// В этом файле должны быть стили для БЭМ-блока modal, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 $font-family:                 -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 $font-family--headings:       $font-family !default;
@@ -41,9 +38,14 @@ $z-index-modal:               100 !default;
 
   &__dialog {
     position: relative;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+    margin: auto;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-width: 375px;
+    background: $white;
+    box-shadow: $shadow;
+    border-radius: $border-radius;
+    overflow: hidden;
 
     @media (min-width: $screen-lg) {
       width: 600px;
@@ -86,7 +88,7 @@ $z-index-modal:               100 !default;
   }
 
   &__body {
-    padding: 0 10px;
+    padding: 0 20px 20px 20px;
     flex-grow: 1;
   }
 

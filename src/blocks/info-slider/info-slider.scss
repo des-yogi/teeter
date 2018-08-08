@@ -1,0 +1,197 @@
+.info-slider {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__slides {
+
+  }
+
+  &__slide {
+
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      width: 100%;
+      max-width: 280px;
+      object-fit: cover;
+
+      @media (min-width: $screen-xl) {
+        max-width: 485px;
+      }
+    }
+  }
+
+  &__pagination-wrapper {
+    position: relative;
+    width: calc(100% - 10px);
+    min-height: 70px;
+    margin-top: 50px;
+    padding: 15px 10px;
+    transform: translate(5px, -10px);
+    background: $white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: $border-radius;
+  }
+
+  &__pagination {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+
+    span {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+      border-radius: 0;
+      // background-image: url(../img/ep-560-1-thumb@1x.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:nth-child(1) {
+        background-image: url(../img/ep-560-1-thumb@1x.jpg);
+      }
+
+      &:nth-child(2) {
+        background-image: url(../img/ep-560-2-thumb@1x.jpg);
+      }
+
+      &:nth-child(3) {
+        background-image: url(../img/ep-560-3-thumb@1x.jpg);
+      }
+
+      &:nth-child(4) {
+        background-image: url(../img/ep-560-4-thumb@1x.jpg);
+      }
+
+      &:nth-child(5) {
+        background-image: url(../img/ep-560-5-thumb@1x.jpg);
+      }
+
+      &::after {
+        position: absolute;
+        top: -23px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        display: block;
+        min-width: 50px;
+        width: calc(100% + 12px);
+        height: 8px;
+        border-radius: 10px 10px 0 0;
+        background-color: transparent;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        opacity: 1;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+
+      &::after {
+        background-color: $second-color;
+      }
+    }
+
+    // Иконки слайдера на страницу ep-970
+    &--ep-970 {
+
+      span {
+
+        &:nth-child(1) {
+          background-image: url(../img/ep-970-1-thumb@1x.jpg);
+        }
+
+        &:nth-child(2) {
+          background-image: url(../img/ep-970-2-thumb@1x.jpg);
+        }
+
+        &:nth-child(3) {
+          background-image: url(../img/ep-970-3-thumb@1x.jpg);
+        }
+
+        &:nth-child(4) {
+          background-image: url(../img/ep-970-4-thumb@1x.jpg);
+        }
+
+        &:nth-child(5) {
+          background-image: url(../img/ep-970-5-thumb@1x.jpg);
+        }
+      }
+    }
+
+    // Иконки слайдера на страницу Contour L5
+    &--contour-l5 {
+
+      span {
+
+        &:nth-child(1) {
+          background-image: url(../img/contour-l5-1-thumb@1x.jpg);
+        }
+
+        &:nth-child(2) {
+          background-image: url(../img/contour-l5-2-thumb@1x.jpg);
+        }
+
+        &:nth-child(3) {
+          background-image: url(../img/contour-l5-3-thumb@1x.jpg);
+        }
+
+        &:nth-child(4) {
+          background-image: url(../img/contour-l5-4-thumb@1x.jpg);
+        }
+
+        &:nth-child(5) {
+          background-image: url(../img/contour-l5-5-thumb@1x.jpg);
+        }
+      }
+    }
+
+    // Иконки слайдера на страницу EZ UP Chin Up
+    &--ez-up {
+
+      span {
+
+        &:nth-child(1) {
+          background-image: url(../img/ez-up_chin-up-1-thumb@1x.jpg);
+        }
+
+        &:nth-child(2) {
+          background-image: url(../img/ez-up_chin-up-2-thumb@1x.jpg);
+        }
+
+        &:nth-child(3) {
+          background-image: url(../img/ez-up_chin-up-3-thumb@1x.jpg);
+        }
+
+        &:nth-child(4) {
+          background-image: url(../img/ez-up_chin-up-4-thumb@1x.jpg);
+        }
+
+        &:nth-child(5) {
+          background-image: url(../img/ez-up_chin-up-5-thumb@1x.jpg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,264 @@
+.text-page {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__col {
+    @include col-offset(md, 1);
+    @include col(md, 10);
+    // @include col-offset(xl, 1);
+    // @include col(xl, 10);
+  }
+
+  &__title {
+    color: $main-color;
+  }
+
+  &__subtitle {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &::after {
+      position: absolute;
+      bottom: -17px;
+      left: 0;
+      content: "";
+      display: block;
+      width: 150px;
+      height: 3px;
+      background-color: $accent-blue-color;
+
+      @media (min-width: $screen-md) {
+        bottom: -20px;
+      }
+
+      @media (min-width: $screen-xl) {
+        bottom: -27px;
+        width: 285px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    &--accented {
+      color: $main-color;
+    }
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: $border-radius * 2;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__shadow {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include right-shadow;
+
+    @media (min-width: $screen-md) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+
+    &--video {
+
+      @media (min-width: $screen-md) {
+        margin-left: 60px;
+        margin-right: 60px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+    }
+
+    &--half-img {
+
+      @media (min-width: $screen-md) {
+        margin-left: 60px;
+        margin-right: 60px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-left: 200px;
+        margin-right: 200px;
+      }
+    }
+
+    &--noshadow {
+      box-shadow: none !important;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__video-content {
+    border-radius: $border-radius * 2;
+    overflow: hidden;
+  }
+
+  &__para {
+
+    &--footnote {
+      font-size: 14px;
+
+      @media (min-width: $screen-xl) {
+        font-size: 15px;
+      }
+    }
+
+    &--indented {
+      margin-top: 40px;
+
+      @media (min-width: $screen-md) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  a:hover {
+    color: $second-color;
+  }
+
+  &__blockquote {
+    position: relative;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700;
+    color: $white;
+    background-color: $how-work-bg;
+    border-radius: $border-radius;
+
+    &::after {
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      content: "";
+      display: block;
+      width: 35px;
+      height: 23px;
+      background-image: url(../img/quotes-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-width: $screen-md) {
+        left: 60px;
+        top: 40px;
+        width: 53px;
+        height: 36px;
+      }
+
+      @media (min-width: $screen-xl) {
+        left: 100px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-left: -60px;
+      margin-right: -60px;
+      padding-top: 115px;
+      padding-bottom: 40px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: -100px;
+      margin-right: -100px;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+  &__author {
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    span {
+      display: block;
+      font-weight: 400;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    font-weight: 600;
+
+    li {
+      position: relative;
+      padding-left: 30px;
+
+      &::before {
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 20px;
+        border-radius: 0;
+
+        @media (min-width: $screen-md) {
+          top: 13px;
+          width: 30px;
+          margin-right: 20px;
+        }
+
+        @media (min-width: $screen-xl) {
+          top: 17px;
+          width: 40px;
+        }
+      }
+
+      @media (min-width: $screen-md) {
+        padding-left: 50px;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-left: 60px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    &--indent {
+      margin-top: 40px;
+
+      @media (min-width: $screen-md) {
+        margin-top: 50px;
+      }
+    }
+  }
+}

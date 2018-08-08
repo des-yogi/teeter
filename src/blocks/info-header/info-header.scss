@@ -1,0 +1,48 @@
+.info-header {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 70px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__return {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 15px 25px;
+    background: $white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 10px 10px;
+
+    @media (min-width: $screen-md) {
+      min-height: 64px;
+    }
+
+    @media (min-width: $screen-xl) {
+      min-height: 104px;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 55px;
+    opacity: 0.4;
+  }
+
+  &__return-link {
+    display: inline-block;
+    transition: all 0.25s ease-out;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
