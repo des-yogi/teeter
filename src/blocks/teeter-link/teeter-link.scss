@@ -165,6 +165,8 @@
 
   &__demo-link {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     z-index: 1;
     top: 195px;
@@ -181,7 +183,6 @@
     transition: $transition-base;
 
     span {
-      margin: auto;
       font-family: $font-family--headings;
       font-weight: 600;
       font-size: 18px;

@@ -10,7 +10,7 @@
       <div class="modal__header  order-modal__header">
         <!-- Сюда вставить хедер из блока инфо -->
         <div class="info-header__return  order-modal__title-wrapper">
-          <span class="modal__title  h4  info-header__text  order-modal__title">Заказ товара: <span id="prod-model">EP-560</span></span>
+          <span class="modal__title  h4  info-header__text  order-modal__title">Заказ товара: <span id="prodName">Инверсионный стол EP-560</span></span>
           <!-- <a class="info-header__return-link" href="index.html#page-footer" title="Вернуться назад">
             <span class="close" aria-label="Вернуться назад"><span></span></span>
           </a> -->
@@ -41,19 +41,19 @@
                 <input class="order-modal__input" type="email" name="email" placeholder="Email" required>
                 <span class="order-modal__error  order-modal__error--email"></span>
               </div>
-              <div class="order-modal__input-wrapper">
+              <div class="order-modal__input-wrapper  order-modal__select-wrapper">
                 <select class="order-modal__select  order-modal__select--payment" name="payment" required>
                   <option selected disabled>Форма оплаты</option>
-                  <option value="val-1">Безналичный расчет</option>
-                  <option value="val-2">Оплата курьеру</option>
+                  <option value="payment-1">Безналичный расчет</option>
+                  <option value="payment-2">Оплата курьеру</option>
                 </select>
               </div>
-              <div class="order-modal__input-wrapper">
+              <div class="order-modal__input-wrapper  order-modal__select-wrapper">
                 <select class="order-modal__select  order-modal__select--delivery" name="delivery" required>
                   <option selected disabled>Способ доставки</option>
-                  <option value="val-1">Самовывоз</option>
-                  <option value="val-2">Новая почта</option>
-                  <option value="val-2">Курьер по Киеву</option>
+                  <option value="delivery-1">Самовывоз</option>
+                  <option value="delivery-2">Новая почта</option>
+                  <option value="delivery-2">Курьер по Киеву</option>
                 </select>
               </div>
 
@@ -62,29 +62,35 @@
             <div class="order-modal__order-section">
               <figure class="order-modal__order-img">
                 <div class="order-modal__img-wrapper">
-                  <picture>
-                    <source srcset="img/" media="(min-width: 1200px)">
-                    <source srcset="img/" media="(min-width: 768px)">
-                    <img src="img/" alt="Img" width="180" height="180">
-                  </picture>
+                  <img id="prodImg" src="img/ep-560-1-mobile@1x.jpg" alt="Img" width="180" height="180">
                 </div>
                 <figcaption class="order-modal__product">
-                  Инверсионный стол <span>EP-560</span>
+                  Инверсионный стол <span id="model">EP-560</span>
                 </figcaption>
                </figure>
 
               <div class="order-modal__payment-section">
-                <div class="order-modal__input-wrapper">
-                  <input type="text" name="amount" value="1000">&nbsp;<span>грн.</span>
+
+                <div class="order-modal__input-wrapper  order-modal__input-wrapper--amount">
+                  <input type="hidden" name="amount" value="1000">
+                  <span class="order-modal__amount">1000</span>&nbsp;<span class="order-modal__currency">грн.</span>
                 </div>
-                <div class="order-modal__input-wrapper">
-                  <button type="button" name="minus">&lsaquo;</button>
-                  <input class="order-modal__input  order-modal__input--quantity" type="text" name="quantity" value="1" min="1" max="10" pattern="^[0-9]$" size="1">
-                  <button type="button" name="plus">&rsaquo;</button>
+
+                <div class="order-modal__input-wrapper  order-modal__input-wrapper--controls">
+                  <span>Кол-во:</span>
+                  <button type="button" name="minus"><span>&lsaquo;</span></button>
+                  <input class="order-modal__input  order-modal__input--quantity" type="text" name="quantity" value="1" min="1" max="10" pattern="^[0-9]$">
+                  <button type="button" name="plus"><span>&rsaquo;</span></button>
                 </div>
-                <div class="order-modal__input-wrapper">
+
+                <div class="order-modal__input-wrapper  order-modal__input-wrapper--submit">
                   <button class="btn" type="submit" name="submit">Купить</button>
+                  <p>
+                    <input id="agreement" type="checkbox" name="agreement" checked required>
+                    <label for="agreement">Даю согласие на обработку моих персональных данных</label>
+                  </p>
                 </div>
+
               </div>
             </div>
 

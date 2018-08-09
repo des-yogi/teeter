@@ -21,6 +21,10 @@
     position: relative;
     padding-left: 20px !important;
     padding-right: 20px !important;
+
+    @media (min-width: $screen-md) {
+      padding: 30px 60px !important;
+    }
   }
 
   &__title {
@@ -36,10 +40,19 @@
   &__close {
     top: 15px;
     right: 15px;
+
+    @media (min-width: $screen-md) {
+      top: 30px;
+      right: 60px;
+    }
   }
 
   &__body {
-
+    @media (min-width: $screen-md) {
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-bottom: 40px;
+    }
   }
 
   &__form-wrapper {
@@ -48,23 +61,120 @@
 
   &__form {
 
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &__input-section {
 
+    @media (min-width: $screen-xl) {
+      width: calc(50% - 10px);
+      margin-right: 20px;
+    }
   }
 
   &__input-wrapper {
     overflow: hidden;
+
+    &--amount {
+      margin-bottom: 30px;
+      text-align: center;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 45px;
+      padding: 5px 20px;
+      margin-bottom: 30px;
+      border: 1px solid $text-muted;
+      border-radius: $border-radius;
+
+      span {
+        font-weight: 700;
+      }
+
+      button {
+        min-width: 35px;
+        height: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        color: $title-color;
+        background: none;
+        border: none;
+        opacity: 0.6;
+        cursor: pointer;
+
+        span {
+          display: block;
+          width: 10px;
+          height: 10px;
+          transform: translateY(-13px);
+        }
+
+        &:first-of-type {
+          margin-left: auto;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          opacity: 1;
+          outline: none;
+        }
+      }
+    }
+
+    &--submit {
+      text-align: center;
+
+      .btn {
+        width: 100%;
+        padding-right: 40px;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border-radius: $border-radius;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: left;
+      }
+
+      label {
+        padding-left: 10px;
+        cursor: pointer;
+      }
+
+      @media (min-width: $screen-md) {
+
+      }
+    }
   }
 
   &__input,
   &__select {
     width: 100%;
     height: 45px;
-    padding: 5px 15px;
+    padding: 5px 20px;
     border: 1px solid $border-color;
-    border-radius: $border-radius * 2;
+    border-radius: $border-radius;
 
     &:hover,
     &:focus {
@@ -73,7 +183,45 @@
     }
 
     &--quantity {
-      width: 20px;
+      width: 30px;
+      height: 25px;
+      padding: 5px;
+      margin-left: 20px;
+      margin-right: 20px;
+      font-size: 16px;
+      font-weight: 700;
+      color: $main-color;
+      border-radius: 0;
+      text-align: center;
+      border: none;
+    }
+  }
+
+  &__select-wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      z-index: 500;
+      top: 20px;
+      right: 17px;
+      content: "";
+      display: block;
+      width: 10px;
+      height: 6px;
+      background-image: svg-load('../img/select-arrow-icon.svg', fill=#4F4F4F, stroke=#fff);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 10px 6px;
+    }
+
+    &:hover::after,
+    &:focus-within::after {
+      background-image: svg-load('../img/select-arrow-icon.svg', fill=#005979, stroke=#fff);
+    }
+
+    &:focus-within::after {
+      transform: scale3D(1, -1, 1);
     }
   }
 
@@ -81,6 +229,16 @@
     // width: calc(100% + 20px);
     padding-right: 20px;
     margin-bottom: 30px;
+    appearance: none;
+
+    &[multiple] {
+      background-image: none;
+      min-height: 6.8em;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
 
     &--payment {
     }
@@ -114,22 +272,105 @@
   }
 
   &__order-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
+    @media (min-width: $screen-md) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-direction: column;
+      align-items: center;
+      width: calc(50% - 10px);
+      padding-left: 60px;
+    }
   }
 
   &__order-img {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
 
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-bottom: 0;
+    }
   }
 
   &__img-wrapper {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 10px;
+    overflow: hidden;
 
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
   }
 
   &__product {
+    font-family: $font-family--headings;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
 
+    span {
+      display: block;
+      margin-top: 5px;
+      font-size: 20px;
+      font-weight: 700;
+      color: $main-color;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 15px;
+    }
   }
 
   &__payment-section {
+    width: 100%;
 
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: calc(50% - 25px);
+      height: 238px;
+      margin-left: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+    }
+  }
+
+  &__amount,
+  &__currency {
+    width: auto;
+    display: inline-block;
+    vertical-align: bottom;
+    font-family: $font-family--headings;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+    text-align: right;
+    color: $main-color;
+    border: none;
   }
 }

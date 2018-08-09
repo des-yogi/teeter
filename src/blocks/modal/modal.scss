@@ -28,32 +28,43 @@ $z-index-modal:               100 !default;
   right: 0;
   bottom: 0;
   left: 0;
+  padding-right: 0 !important;
+
   z-index: $z-index-modal;
   -webkit-overflow-scrolling: touch;
 
   .js-modal-open & {
     overflow-x: hidden;
     overflow-y: auto;
+    padding-right: 0 !important;
   }
 
   &__dialog {
     position: relative;
-    margin: auto;
+    // margin: auto;
     width: calc(100% - 40px);
-    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
     max-width: 375px;
-    background: $white;
+    //background: red;
     box-shadow: $shadow;
-    border-radius: $border-radius;
-    overflow: hidden;
+    // border-radius: $border-radius;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // overflow: hidden;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
+      max-width: none;
       width: 600px;
       height: auto;
 
       #{$block-name}--open & {
         animation: modal-content-show $transition-time 1 both;
       }
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 995px;
+      max-width: none;
     }
   }
 
