@@ -74,6 +74,7 @@
       background-repeat: no-repeat;
       background-size: 148px 55px;
       background-position: center;
+      pointer-events: none;
 
       @media (min-width: $screen-md) {
         bottom: -52.5px;

@@ -1,20 +1,11 @@
-<!--DEV
-@ @include('blocks/order-modal/order-modal.html')
-<div class="order-modal">content</div>
--->
-
 <div id="order-modal" class="modal  order-modal" tabindex="-1" role="dialog">
   <div class="modal__dialog" role="document">
     <div class="modal__content  order-modal__content">
 
       <div class="modal__header  order-modal__header">
-        <!-- Сюда вставить хедер из блока инфо -->
         <div class="info-header__return  order-modal__title-wrapper">
           <span class="modal__title  h4  info-header__text  order-modal__title">Заказ товара: <span id="prodName">Инверсионный стол EP-560</span></span>
-          <!-- <a class="info-header__return-link" href="index.html#page-footer" title="Вернуться назад">
-            <span class="close" aria-label="Вернуться назад"><span></span></span>
-          </a> -->
-           <a href="#" class="close  modal__close  order-modal__close" data-dismiss="modal" aria-label="Закрыть"><span></span>
+           <a href="#" class="close  modal__close  order-modal__close" data-dismiss="modal" aria-label="Закрыть" onclick="location.reload(false)"><span></span>
         </a>
         </div>
       </div>
@@ -73,15 +64,15 @@
               <div class="order-modal__payment-section">
 
                 <div class="order-modal__input-wrapper  order-modal__input-wrapper--amount">
-                  <input type="hidden" name="amount" value="1000">
-                  <span class="order-modal__amount">1000</span>&nbsp;<span class="order-modal__currency">грн.</span>
+                  <input id="amount" type="hidden" name="amount" value="0">
+                  <span class="order-modal__amount" data-amount="0">1000</span>&nbsp;<span class="order-modal__currency">грн.</span>
                 </div>
 
-                <div class="order-modal__input-wrapper  order-modal__input-wrapper--controls">
+                <div id="controlsField" class="order-modal__input-wrapper  order-modal__input-wrapper--controls">
                   <span>Кол-во:</span>
-                  <button type="button" name="minus"><span>&lsaquo;</span></button>
-                  <input class="order-modal__input  order-modal__input--quantity" type="text" name="quantity" value="1" min="1" max="10" pattern="^[0-9]$">
-                  <button type="button" name="plus"><span>&rsaquo;</span></button>
+                  <button id="minusBtn" type="button" name="minus"></button>
+                  <input id="quantity" class="order-modal__input  order-modal__input--quantity" type="text" name="quantity" value="1" min="1" max="10" pattern="^[0-9]$">
+                  <button id="plusBtn" type="button" name="plus"></button>
                 </div>
 
                 <div class="order-modal__input-wrapper  order-modal__input-wrapper--submit">

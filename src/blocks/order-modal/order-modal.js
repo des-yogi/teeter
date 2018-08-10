@@ -43,38 +43,84 @@ $( document ).ready(function() {
     ];
 
   var buyBtns = Array.from(document.querySelectorAll('.btn--buy'));
+  var itemPrices = Array.from(document.querySelectorAll('.shop-card__price-num'));
   var orderModal = document.getElementById('order-modal');
   var prodName = orderModal.querySelector('#prodName');
   var prodShortName = orderModal.querySelector('#shortName');
   var prodKind = orderModal.querySelector('#kind');
   var prodImage = orderModal.querySelector('#prodImg');
+  var orderPrice = orderModal.querySelector('.order-modal__amount');
 
   // console.log(prodName.textContent);
+  // console.log('Некорректно заполнено поле data-attr кнопки Купить: data-model !== PRODUCTS.model');
+
+  var init = function(Obj, Arr) {
+    for (item of Obj) {
+      for (el of Arr) {
+        if ( el.classList.contains('shop-card__price-num--' + item.model) ) {
+          el.innerText = item.price;
+        }
+      }
+    }
+  };
+
+  // заполняем карточки товара ценой из объекта с данными PRODUCTS
+  init(PRODUCTS, itemPrices);
+
+  var setOrderModal = function (el) {
+    for (product of PRODUCTS) {
+      if (el === product.model) {
+        prodName.innerText = product.shortName;
+        prodKind.innerText = product.kind;
+        prodShortName.innerText = product.shortName;
+        prodImage.src = 'img/' + product.img;
+        orderPrice.innerText = product.price;
+        orderPrice.dataset.amount = product.price;
+      }
+    }
+  };
 
   var buyEventHandler = function (e) {
 
-    // console.log(e.target.dataset.model);
-    // console.log(prodName + '; ' + modelName);
-
-    if (e.target.dataset.model) {
-      var target = e.target.dataset.model;
-      console.log(target);
-
-      for (product of PRODUCTS) {
-        if (target === product.model) {
-          prodName.textContent = product.shortName;
-          prodKind.textContent = product.kind;
-          prodShortName.textContent = product.shortName;
-          prodImage.src = 'img/' + product.img;
-        }
+    if (!e.target.dataset.model) {
+      console.log('Поле data-attr кнопки Купить: data-model - Не заполнено');
+    } else {
+        var target = e.target.dataset.model;
+        setOrderModal(target);
       }
-
-    } return;
   };
-
 
   for (var btn of buyBtns) {
     btn.addEventListener('click', buyEventHandler);
   }
+
+});
+
+
+$( document ).ready(function() {
+
+  var controlsField = document.getElementById('controlsField');
+  var quantityField = document.getElementById('quantity');
+  var quantity = quantityField.value;
+
+  var amountSpan = document.querySelector('.order-modal__amount');
+  var amountField = document.getElementById('amount');
+
+  var btnEventHandler = function (e) {
+
+    var ITEMPRICE = parseFloat(amountSpan.dataset.amount);
+    var totalSum = 0;
+
+    if (e.target.id === 'plusBtn' && quantity < 10) {
+      quantity++;
+    } else if (e.target.id === 'minusBtn'  && quantity > 1) {
+      quantity--;
+    }
+    quantityField.value = quantity;
+    amountField.value = quantity * ITEMPRICE;
+    amountSpan.innerText = quantity * ITEMPRICE;
+  };
+
+  controlsField.addEventListener('click', btnEventHandler);
 
 });

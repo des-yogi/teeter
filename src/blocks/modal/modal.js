@@ -170,7 +170,9 @@
       // this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
       this.$element.on('keydown.dismiss.nth.modal', $.proxy(function (e) {
         e.which == 27 && this.hide()
+
       }, this))
+
     } else if (!this.isShown) {
       // this.$element.off('keydown.dismiss.bs.modal')
       this.$element.off('keydown.dismiss.nth.modal')
@@ -209,7 +211,7 @@
     // var animate = this.$element.hasClass('fade') ? 'fade' : ''
 
     if (this.isShown && this.options.backdrop) {
-      // var doAnimate = $.support.transition && animate
+      // var doAnimatmodal__closee = $.support.transition && animate
 
       this.$backdrop = $(document.createElement('div'))
         // .addClass('modal-backdrop ' + animate)

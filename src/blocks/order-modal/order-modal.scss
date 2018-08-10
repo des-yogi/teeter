@@ -23,7 +23,7 @@
     padding-right: 20px !important;
 
     @media (min-width: $screen-md) {
-      padding: 30px 60px !important;
+      padding: 30px 50px !important;
     }
   }
 
@@ -43,14 +43,14 @@
 
     @media (min-width: $screen-md) {
       top: 30px;
-      right: 60px;
+      right: 40px;
     }
   }
 
   &__body {
     @media (min-width: $screen-md) {
-      padding-left: 60px;
-      padding-right: 60px;
+      padding-left: 50px;
+      padding-right: 50px;
       padding-bottom: 40px;
     }
   }
@@ -103,6 +103,7 @@
       }
 
       button {
+        position: relative;
         min-width: 35px;
         height: 25px;
         padding-top: 10px;
@@ -116,14 +117,37 @@
         color: $title-color;
         background: none;
         border: none;
-        opacity: 0.6;
+        opacity: 0.5;
         cursor: pointer;
+        background-color: $white;
 
-        span {
+        /* span {
           display: block;
           width: 10px;
           height: 10px;
           transform: translateY(-13px);
+        } */
+
+        &::after {
+          position: absolute;
+          top: 10px;
+          left: 14px;
+          content: "";
+          display: block;
+          width: 10px;
+          height: 6px;
+          background-image: url(../img/select-arrow-icon.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          transform: rotate(90deg);
+        }
+
+        &[name=plus] {
+
+          &::after {
+            transform: rotate(-90deg);
+          }
         }
 
         &:first-of-type {
@@ -160,10 +184,6 @@
       label {
         padding-left: 10px;
         cursor: pointer;
-      }
-
-      @media (min-width: $screen-md) {
-
       }
     }
   }
@@ -337,7 +357,7 @@
       display: block;
       margin-top: 5px;
       font-family: inherit;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: $main-color;
     }
