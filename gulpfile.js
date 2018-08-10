@@ -458,7 +458,8 @@ gulp.task('default', ['serve']);
 gulp.task('serve', ['build'], function() {
   browserSync.init({
     server: dirs.buildPath,
-    startPath: 'index.html',
+
+    Path: 'index.html',
     open: true,
     port: 8080,
   });
