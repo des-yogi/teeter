@@ -1,4 +1,6 @@
 .info-slider {
+  background-color: $white;
+  border-radius: $border-radius;
 
   $block-name:                &; // #{$block-name}__element
 
@@ -13,6 +15,7 @@
   &__img-wrapper {
     width: 100%;
     text-align: center;
+    border-radius: $border-radius;
     overflow: hidden;
 
     img {

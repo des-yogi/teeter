@@ -47,6 +47,10 @@
     @media (min-width: $screen-md) {
       margin-bottom: 45px;
     }
+
+    @media (min-width: $screen-xl) {
+      padding: 0 100px;
+    }
   }
 
   &__col-text {
@@ -139,7 +143,7 @@
     width: 155px;
     height: 324px;
     margin-left: auto;
-    border-radius: $border-radius;
+    border-radius: $border-radius * 4;
     box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.35);
     overflow: hidden;
 
