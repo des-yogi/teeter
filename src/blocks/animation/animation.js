@@ -1,26 +1,6 @@
 // "use strict";
 
-/* $( document ).ready(function() {
-
-  var anyObj = document.querySelector('.operation-principle__title');
-  anyObj.style.transform = 'translateX(3000px)';
-  var windowHeight = document.documentElement.clientHeight;
-  var startPoint = 150; // Отступ снизу экрана, при котором запускается анимация
-
-  var leftTranslateHandler = function(e) {
-    var coords = anyObj.getBoundingClientRect().top;
-
-    if (windowHeight - coords > startPoint) {
-      anyObj.classList.add('animated', 'bounceInRight'); // выполнить что-то
-      window.removeEventListener('scroll', leftTranslateHandler); // убить обработчик
-    }
-  }
-
-  window.addEventListener('scroll', leftTranslateHandler);
-
-}); */
-
- $(document).ready(function () {
+$(document).ready(function () {
 
   var isMobile = window.isMobile.any;
 
@@ -28,19 +8,21 @@
   var startMarker = 150; // Отступ снизу экрана, при котором запускается анимация
   var titleArr = document.querySelectorAll('*[data-animation]'); // Коллекция объектов для анимации
 
-  var bounceInRightSet = function (item, itemCoords) {
-    item.style.transform = 'translateX(3000px)';
+  var fadeInRightSet = function (item, itemCoords) {
+    item.style.opacity = '0';
+    item.style.transform = 'translate3d(100%, 0, 0)';
 
     if (windowHeight - itemCoords > startMarker) {
-      item.classList.add('animated', 'bounceInRight'); // выполнить что-то
+      item.classList.add('animated', 'fadeInRight'); // выполнить что-то
     }
   };
 
-  var bounceInLeftSet = function (item, itemCoords) {
-    item.style.transform = 'translateX(-3000px)';
+  var fadeInLeftSet = function (item, itemCoords) {
+    item.style.opacity = '0';
+    item.style.transform = 'translate3d(-100%, 0, 0)';
 
     if (windowHeight - itemCoords > startMarker) {
-      item.classList.add('animated', 'bounceInLeft'); // выполнить что-то
+      item.classList.add('animated', 'fadeInLeft'); // выполнить что-то
     }
   };
 
@@ -53,10 +35,11 @@
     }
   };
 
-  var rubberBand = function (item, itemCoords) {
+  var fadeIn = function (item, itemCoords) {
+    item.style.opacity= '0';
 
     if (windowHeight - itemCoords > startMarker) {
-      item.classList.add('animated', 'rubberBand'); // выполнить что-то
+      item.classList.add('animated', 'fadeIn'); // выполнить что-то
     }
   };
 
@@ -68,17 +51,17 @@
 
       switch (item.dataset.animation) {
 
-        case 'bounceInRight':
-          bounceInRightSet(item, itemCoords);
+        case 'fadeInRight':
+          fadeInRightSet(item, itemCoords);
           break;
-        case 'bounceInLeft':
-          bounceInLeftSet(item, itemCoords);
+        case 'fadeInLeft':
+          fadeInLeftSet(item, itemCoords);
           break;
         case 'zoomIn':
           zoomIn(item, itemCoords);
           break;
-        case 'rubberBand':
-          rubberBand(item, itemCoords);
+        case 'fadeIn':
+          fadeIn(item, itemCoords);
           break;
 
         default:
