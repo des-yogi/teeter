@@ -92,8 +92,7 @@
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $second-color;
     outline: none;
 
@@ -102,6 +101,19 @@
 
       &::after {
         background-color: $white;
+      }
+    }
+  }
+
+  &:focus {
+    background-color: $white;
+    outline: none;
+
+    span {
+      border-color: $second-color;
+
+      &::after {
+        background-color: $second-color;
       }
     }
   }
