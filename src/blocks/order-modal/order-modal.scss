@@ -233,6 +233,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 10px 6px;
+      pointer-events: none;
     }
 
     &:hover::after,
@@ -250,6 +251,7 @@
     padding-right: 20px;
     margin-bottom: 30px;
     appearance: none;
+    cursor: pointer;
 
     &[multiple] {
       background-image: none;
@@ -320,13 +322,17 @@
     @media (min-width: $screen-md) {
       display: flex;
       flex-direction: column-reverse;
-      margin-bottom: 0;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
   &__img-wrapper {
     width: 180px;
     height: 180px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
     overflow: hidden;
 

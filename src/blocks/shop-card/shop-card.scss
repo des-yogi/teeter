@@ -134,6 +134,8 @@
     font-family: $font-family--headings;
     font-size: 14px;
     font-weight: 600;
+    line-height: 1.3em;
+    letter-spacing: normal;
     //text-align: center;
 
     @media (min-width: $screen-xl) {

@@ -5,56 +5,56 @@ $( document ).ready(function() {
   var PRODUCTS =
     [
       {
-        name: 'Инверсионный стол EP-560',
-        shortName: 'EP-560',
-        kind: 'Инверсионный стол',
+        name: 'Инверсионный стол механический Teeter Hang Ups EP-560',
+        shortName: 'Teeter Hang Ups EP-560',
+        kind: 'Инверсионный стол механический',
         model: 'ep-560',
         img: 'ep-560-1-mobile@1x.jpg',
-        price: 4000,
-        amount: null
+        price: 12150,
+        amount: 0
       },
       {
-        name: 'Инверсионный стол EP-970 Ltd',
-        shortName: 'EP-970 Ltd',
-        kind: 'Инверсионный стол',
+        name: 'Инверсионный стол механический Teeter Hang Ups EP-970 LTD',
+        shortName: 'Hang Ups EP-970 LTD',
+        kind: 'Инверсионный стол механический',
         model: 'ep-970',
         img: 'ep-970-1-mobile@1x.jpg',
-        price: 6000,
-        amount: null
+        price: 15795,
+        amount: 0
       },
       {
-        name: 'Инверсионный стол Contour L5',
-        shortName: 'Contour L5',
-        kind: 'Инверсионный стол',
+        name: 'Инверсионный стол механический Teeter Hang Ups Contour L5',
+        shortName: 'Teeter Hang Ups Contour L5',
+        kind: 'Инверсионный стол механический',
         model: 'contour-l5',
         img: 'contour-l5-1-mobile@1x.jpg',
-        price: 8000,
-        amount: null
+        price: 17739,
+        amount: 0
       },
       {
-        name: 'Инверсионные ботинки EZ-Up Chin-Up System',
-        shortName: 'EZ-Up Chin-Up System',
-        kind: 'Инверсионные ботинки',
+        name: 'Инверсионные ботинки с турником Teeter EZ-Up Inversion & Chin-Up System',
+        shortName: 'Teeter EZ-Up Inversion & Chin-Up System',
+        kind: 'Инверсионные ботинки с турником',
         model: 'ez-up',
         img: 'ez-up_chin-up-1-mobile@1x.jpg',
-        price: 2000,
-        amount: null
+        price: 3915,
+        amount: 0
       }
     ];
 
   var buyBtns = Array.from(document.querySelectorAll('.btn--buy'));
   var itemPrices = Array.from(document.querySelectorAll('.shop-card__price-num'));
   var orderModal = document.getElementById('order-modal');
-  var prodName = orderModal.querySelector('#prodName');
-  var prodShortName = orderModal.querySelector('#shortName');
-  var prodKind = orderModal.querySelector('#kind');
-  var prodImage = orderModal.querySelector('#prodImg');
-  var orderPrice = orderModal.querySelector('.order-modal__amount');
+  var prodName = document.getElementById('prodName');
+  var prodShortName = document.getElementById('shortName');
+  var prodKind = document.getElementById('kind');
+  var prodImage = document.getElementById('prodImg');
+  var orderPrice = document.getElementById('amountField');
 
   // console.log(prodName.textContent);
   // console.log('Некорректно заполнено поле data-attr кнопки Купить: data-model !== PRODUCTS.model');
 
-  var init = function(Obj, Arr) {
+  /*var init = function(Obj, Arr) {
     for (item of Obj) {
       for (el of Arr) {
         if ( el.classList.contains('shop-card__price-num--' + item.model) ) {
@@ -62,13 +62,23 @@ $( document ).ready(function() {
         }
       }
     }
+  };*/
+
+  var init = function(Obj, Arr) {
+    Obj.forEach(function(item) {
+      Arr.forEach(function(el) {
+        if ( el.classList.contains('shop-card__price-num--' + item.model) ) {
+          el.innerText = item.price;
+        }
+      });
+    });
   };
 
   // заполняем карточки товара ценой из объекта с данными PRODUCTS
   init(PRODUCTS, itemPrices);
 
   var setOrderModal = function (el) {
-    for (product of PRODUCTS) {
+    /*for (product of PRODUCTS) {
       if (el === product.model) {
         prodName.innerText = product.shortName;
         prodKind.innerText = product.kind;
@@ -77,7 +87,17 @@ $( document ).ready(function() {
         orderPrice.innerText = product.price;
         orderPrice.dataset.amount = product.price;
       }
-    }
+    }*/
+    PRODUCTS.forEach(function(product) {
+      if (el === product.model) {
+        prodName.innerText = product.shortName;
+        prodKind.innerText = product.kind;
+        prodShortName.innerText = product.shortName;
+        prodImage.src = 'img/' + product.img;
+        orderPrice.innerText = product.price;
+        orderPrice.dataset.amount = product.price;
+      }
+    });
   };
 
   var buyEventHandler = function (e) {
@@ -90,37 +110,76 @@ $( document ).ready(function() {
       }
   };
 
-  for (var btn of buyBtns) {
+  /*for (var btn of buyBtns) {
     btn.addEventListener('click', buyEventHandler);
-  }
+  }*/
+  buyBtns.forEach(function(btn) {
+    btn.addEventListener('click', buyEventHandler);
+  });
 
 });
 
 
 $( document ).ready(function() {
 
-  var controlsField = document.getElementById('controlsField');
-  var quantityField = document.getElementById('quantity');
-  var quantity = quantityField.value;
+  var orderForm = document.getElementById('order-modal');
 
-  var amountSpan = document.querySelector('.order-modal__amount');
-  var amountField = document.getElementById('amount');
+  if (orderForm) {
+    var controlsField = document.getElementById('controlsField');
+    var quantityField = document.getElementById('quantity');
+    var quantity = quantityField.value;
 
-  var btnEventHandler = function (e) {
+    var amountSpan = document.getElementById('amountField');
+    var amountField = document.getElementById('amount');
 
-    var ITEMPRICE = parseFloat(amountSpan.dataset.amount);
-    var totalSum = 0;
+    var btnEventHandler = function (e) {
 
-    if (e.target.id === 'plusBtn' && quantity < 10) {
-      quantity++;
-    } else if (e.target.id === 'minusBtn'  && quantity > 1) {
-      quantity--;
-    }
-    quantityField.value = quantity;
-    amountField.value = quantity * ITEMPRICE;
-    amountSpan.innerText = quantity * ITEMPRICE;
-  };
+      var ITEMPRICE = parseFloat(amountSpan.dataset.amount);
+      var totalSum = 0;
 
-  controlsField.addEventListener('click', btnEventHandler);
+      if (e.target.id === 'plusBtn' && quantity < 10) {
+        quantity++;
+      } else if (e.target.id === 'minusBtn'  && quantity > 1) {
+        quantity--;
+      }
+      quantityField.value = quantity;
+      amountField.value = quantity * ITEMPRICE;
+      amountSpan.innerText = quantity * ITEMPRICE;
+    };
 
+    controlsField.addEventListener('click', btnEventHandler);
+  }
+
+});
+
+$( document ).ready(function() {
+  $("#submit_button").on('click', function () {
+    // event.preventDefault();
+    $.ajax({
+      url: 'submit.php',
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+        firstName: $('input[name=name]').val(),
+        lastName: $('input[name=surname]').val(),
+        tel: $('input[name=tel]').val(),
+        email: $('input[name=email]').val(),
+        payment: $('select[name=payment] option:selected').val(),
+        delivery: $('select[name=delivery] option:selected').val(),
+        quantity: $('input[name=quantity]').val(),
+        agreement: $('#agreement').is(":checked"),
+        // itemName: 'Some item name or code (or both) insert here',
+        // price: '123456.789'
+        itemName: $('#prodName').text(),
+        price: $('#amountField').text()
+      }
+    }).done(function (data) {
+      if (data['success'] == false)
+      {
+        alert('Error: ' + data['error']);
+      } else {
+        alert('Success!');
+      }
+    });
+  });
 });

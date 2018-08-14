@@ -1,5 +1,5 @@
 
-$font-family:                 -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
+$font-family:                 -apple-system, BlinkMacSystemFont, 'Open Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 $font-family--headings:       $font-family !default;
 
 $font-size--h4:               1.25em !default;
@@ -58,7 +58,7 @@ $z-index-modal:               100 !default;
       height: auto;
 
       #{$block-name}--open & {
-        animation: modal-content-show $transition-time 1 both;
+        // animation: modal-content-show $transition-time 1 both;
       }
     }
 

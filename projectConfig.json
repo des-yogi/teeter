@@ -45,7 +45,8 @@
     "info-footer": [],
     "info-header": [],
     "text-page": [],
-    "revealator": []
+    "revealator": [],
+    "video-modal": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",
