@@ -4,19 +4,21 @@
   margin-right: -20px;
 
   @media (min-width: $screen-md) {
-    margin-left: -25px;
-    margin-right: -25px;
-
-    padding-left: 60px;
-    padding-right: 60px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media (min-width: $screen-xl) {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 100px;
   }
 
-  .swiper-wrapper {
+
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__wrapper {
     align-items: stretch;
     height: auto !important;
     margin-bottom: 40px;
@@ -26,19 +28,17 @@
     }
   }
 
-  $block-name:                &; // #{$block-name}__element
-
   &__title {
     padding-left: 25px;
     padding-right: 25px;
 
     @media (min-width: $screen-md) {
       padding: 0;
-      transform: translateX(-40px);
+      // transform: translateX(-40px);
     }
 
     @media (min-width: $screen-xl) {
-      transform: translateX(-80px);
+      //transform: translateX(-80px);
     }
   }
 
@@ -47,17 +47,24 @@
     padding-right: 20px;
 
     @media (min-width: $screen-md) {
-      padding-left: 25px;
-      padding-right: 25px;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
   &__slide {
     position: relative;
-    //max-width: 260px;
+    margin-bottom: 40px;
+    @include col(xs, 12);
+    @include col(md, 4);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @media (min-width: $screen-md) {
       width: 100%;
+      margin-bottom: 0;
     }
   }
 

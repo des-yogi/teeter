@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+/*$( document ).ready(function() {
 
   var certificateSwiper = new Swiper('.helpful-info__slides', {
     //initialSlide: 1,
@@ -38,3 +38,4 @@ $( document ).ready(function() {
   });
 
 });
+*/
