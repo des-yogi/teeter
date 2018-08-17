@@ -168,17 +168,17 @@ $( document ).ready(function() {
         delivery: $('select[name=delivery] option:selected').val(),
         quantity: $('input[name=quantity]').val(),
         agreement: $('#agreement').is(":checked"),
-        // itemName: 'Some item name or code (or both) insert here',
-        // price: '123456.789'
         itemName: $('#prodName').text(),
         price: $('#amountField').text()
       }
     }).done(function (data) {
       if (data['success'] == false)
       {
-        alert('Error: ' + data['error']);
+        alert('Ошибка: ' + data['error']);
       } else {
-        alert('Success!');
+        // alert('Заказ успешно отправлен!');
+        $('#order-modal-form').hide();
+        $('.order-modal__ok').show();
       }
     });
   });

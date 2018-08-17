@@ -56,10 +56,13 @@
   }
 
   &__form-wrapper {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__form {
+    width: 100%;
 
     @media (min-width: $screen-xl) {
       display: flex;
@@ -404,5 +407,31 @@
     text-align: right;
     color: $main-color;
     border: none;
+  }
+
+  &__ok {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+
+    display: none;
+
+    img {
+      width: 80px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__ok-message {
+    margin: 0;
+
+    span {
+      display: block;
+      margin-bottom: 10px;
+    }
   }
 }
