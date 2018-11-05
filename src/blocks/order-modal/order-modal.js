@@ -110,9 +110,6 @@ $( document ).ready(function() {
       }
   };
 
-  /*for (var btn of buyBtns) {
-    btn.addEventListener('click', buyEventHandler);
-  }*/
   buyBtns.forEach(function(btn) {
     btn.addEventListener('click', buyEventHandler);
   });
